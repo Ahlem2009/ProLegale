@@ -1,0 +1,96 @@
+<section class="section-intro padding-top-sm">
+    <div class="container">
+  <div class="container">
+    
+                           
+    <div class="row g-2 w-100  ">
+        <div class="col flex-grow ">
+          <div class="input-group  rounded-pill py-3 px-7">
+           
+            
+          <input type="text" placeholder="entrer un mot clé" class="form-control" name="">
+         
+          <div class="input-field second-wrap">
+              <button class="btn-primary  py-3 px-5" type="button"><i class="fa fa-search-plus" aria-hidden="true"></i>chercher</button>
+            </div>
+          </div>
+          <div class="nav-item">
+            <a class="nav-link underline" routerLink="/recherche">Recherche avancé</a>
+          </div>
+          
+        </div>
+    </div>
+</div>
+</div>
+</section>
+
+<div class="row" style="margin: 20px;">
+    <div class=" col-lg-10 col-md-6">
+    </div>
+    <div class=" col-lg-2 col-md-6">
+        <button class="btn btn-lg btn-outline-primary" routerLink="document/creer" >ajouter un Article</button>
+    </div>
+ </div> 
+
+<div class="card-header bg-primary text-white px-6">
+    <div class="d-flex justify-content-between align-items-center">
+        <div class="me-6">
+            <h2 class="card-title text-white mb-0">List document</h2>
+           
+        </div>
+       
+    </div>
+</div>
+<div class="card-body p-6">
+   
+       
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    
+                    <th scope="col">Titre
+                       
+                    </th>
+                
+                    <th scope="col">Abstract</th>
+                    <th scope="col">Tags</th>
+                    <th scope="col">Action</th>
+                  
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of item2"  >
+                  
+                    <td>
+                         {{item.titre}} 
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="text-primary">Réf: </div>
+                            <td>{{item.ref}}</td></div>
+                            <div class="col-6">
+                                <div class="text-primary">Publié le: </div>
+                            <td>{{item.date_publication}}</td> </div>
+                        </div>
+                    </td>
+                  
+                    <td>
+                        <p style="font-size: 14px;">{{item.abstract}}</p></td>
+                    <td>
+                        <ul>
+                          <li *ngFor="let tg of item.tags">
+                            {{tg.label}} 
+                          </li>
+                        </ul>
+                      </td>
+                    <td>
+                        <button class="btn btn-primary " ngbTooltip="modifier"><i class="fa fa-wrench" ></i></button>
+                        
+                       
+                    </td>
+                </tr>
+             
+            </tbody>
+        </table>
+        
+    </div>
